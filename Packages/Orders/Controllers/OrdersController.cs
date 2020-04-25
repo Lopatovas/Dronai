@@ -48,6 +48,7 @@ namespace Dronai.Packages.Orders.Controllers
             Order newOrder = OrderMocks.GetOrder();
             newOrder.AddressTo = order.AddressTo;
             newOrder.DateOfDelivery = order.DateOfDelivery;
+            newOrder.Status = OrderStatus.PendingPayment.Value;
             return Ok(newOrder);
         }
 

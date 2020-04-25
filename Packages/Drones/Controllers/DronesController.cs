@@ -21,6 +21,11 @@ namespace Dronai.Packages.Drones.Controllers
         [HttpPost]
         public IActionResult AddDrone(Drone drone)
         {
+            Drone newDrone = DroneMocks.GetDrone();
+            newDrone.ManufacturerCode = drone.ManufacturerCode;
+            newDrone.BatterySize = drone.BatterySize;
+            newDrone.AmountOfDeliveries = 0;
+            newDrone.DateOfRegistry = new DateTime();
             return Ok(drone);
         }
     }
