@@ -35,7 +35,7 @@ namespace Dronai.Packages.Orders.Controllers
         }
 
         [HttpGet]
-        [Route("/Orders")]
+        [Route("/Orders/{id}")]
         public IActionResult GetOrders()
         {
             return Ok(OrderMocks.GetOrders(10));
@@ -45,7 +45,10 @@ namespace Dronai.Packages.Orders.Controllers
         [Route("/Orders")]
         public IActionResult CreateOrder(Order order)
         {
-            return Ok(order);
+            Order newOrder = OrderMocks.GetOrder();
+            newOrder.AddressTo = order.AddressTo;
+            newOrder.DateOfDelivery = order.DateOfDelivery;
+            return Ok(newOrder);
         }
 
         [HttpPost]
