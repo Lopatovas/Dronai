@@ -16,7 +16,7 @@ namespace Dronai.Packages.Orders.Mocks
                 Id = rand.Next(1000),
                 AddressFrom = "Laisves Pr. 469, Kedainiai",
                 AddressTo = "Agurku Pl. 15, Kedainiai",
-                Status = OrderStatus.PendingPayment,
+                Status = OrderStatus.PendingPayment.Value,
                 DateOfDelivery = new DateTime()
             };
         }

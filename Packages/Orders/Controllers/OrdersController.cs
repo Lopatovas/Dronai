@@ -54,7 +54,7 @@ namespace Dronai.Packages.Orders.Controllers
         {
             Order order = OrderMocks.GetOrder();
             order.Id = id;
-            order.Status = OrderStatus.Paid;
+            order.Status = OrderStatus.Paid.Value;
             return Ok(order);
         }
 
@@ -64,7 +64,7 @@ namespace Dronai.Packages.Orders.Controllers
         {
             Order order = OrderMocks.GetOrder();
             order.Id = id;
-            order.Status = OrderStatus.Confirmed;
+            order.Status = OrderStatus.Confirmed.Value;
             return Ok(order);
         }
 
@@ -74,7 +74,7 @@ namespace Dronai.Packages.Orders.Controllers
         {
             Order order = OrderMocks.GetOrder();
             order.Id = id;
-            order.Status = OrderStatus.Denied;
+            order.Status = OrderStatus.Denied.Value;
             return Ok(order);
         }
     }

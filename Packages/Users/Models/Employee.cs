@@ -9,8 +9,8 @@ namespace Dronai.Packages.Users.Models
     {
         public string PersonalId { get; set; }
 
-        public EmployeePosition Position { get; set; }
+        public string Position { get; set; }
 
-        public string HomelAddress { get; set; }
+        public string HomeAddress { get; set; }
     }
 }

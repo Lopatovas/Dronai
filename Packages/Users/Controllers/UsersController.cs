@@ -16,10 +16,11 @@ namespace Dronai.Packages.Users.Controllers
         }
 
         [HttpPost]
-        public IActionResult LoginUser([FromBody] string userName, string password)
+        [Route("/login")]
+        public IActionResult LoginUser([FromBody] User payload)
         {
-            System.Console.WriteLine(password);
-            return Ok(userName);
+            System.Console.WriteLine(payload.Password);
+            return Ok(payload.Email);
         }
     }
 }

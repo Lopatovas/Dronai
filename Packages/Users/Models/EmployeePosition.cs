@@ -5,10 +5,15 @@ using System.Threading.Tasks;
 
 namespace Dronai.Packages.Users.Models
 {
-    public enum EmployeePosition
+    public class EmployeePosition
     {
-        Loader,
-        Administrator,
-        DroneSupervisor
+        private EmployeePosition(string value) { Value = value; }
+
+        public string Value { get; set; }
+
+        public static EmployeePosition Loader { get { return new EmployeePosition("Krovėjas"); } }
+        public static EmployeePosition Administrator { get { return new EmployeePosition("Administratorius"); } }
+
+        public static EmployeePosition DroneSupervisor { get { return new EmployeePosition("Dronų prižiūrėtojas"); } }
     }
 }

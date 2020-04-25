@@ -14,7 +14,7 @@ namespace Dronai.Packages.Drones.Models
 
         public int BatterySize { get; set; }
 
-        public DroneStatus Status { get; set; }
+        public string Status { get; set; }
 
         public float Latitude { get; set; }
 

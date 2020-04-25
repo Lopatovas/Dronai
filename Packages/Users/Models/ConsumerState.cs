@@ -5,9 +5,13 @@ using System.Threading.Tasks;
 
 namespace Dronai.Packages.Users.Models
 {
-    public enum ConsumerState
+    public class ConsumerState
     {
-        Suspended,
-        Active
+        private ConsumerState(string value) { Value = value; }
+
+        public string Value { get; set; }
+
+        public static ConsumerState Suspended { get { return new ConsumerState("Suspenduotas"); } }
+        public static ConsumerState Active { get { return new ConsumerState("Aktyvus"); } }
     }
 }

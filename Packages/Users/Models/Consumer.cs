@@ -7,6 +7,6 @@ namespace Dronai.Packages.Users.Models
 {
     public class Consumer : User
     {
-        public ConsumerState State { get; set; }
+        public string State { get; set; }
     }
 }

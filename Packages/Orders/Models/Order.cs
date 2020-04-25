@@ -9,7 +9,7 @@ namespace Dronai.Packages.Orders.Models
 
         public DateTime DateOfDelivery { get; set; }
 
-        public OrderStatus Status { get; set; }
+        public string Status { get; set; }
 
         public string AddressFrom { get; set; }
     }

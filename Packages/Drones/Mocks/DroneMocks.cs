@@ -16,7 +16,7 @@ namespace Dronai.Packages.Drones.Mocks
                 BatterySize = rand.Next(150),
                 DateOfRegistry = new DateTime(1999, 1, 1),
                 ManufacturerCode = "123456",
-                Status = DroneStatus.Free,
+                Status = DroneStatus.Free.Value,
                 Latitude = 102315.15f,
                 Longitute = 12452.20f,
                 Id = rand.Next(1000)
