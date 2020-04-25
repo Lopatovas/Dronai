@@ -16,7 +16,7 @@ namespace Dronai.Packages.Users.Controllers
         }
 
         [HttpPost]
-        public IActionResult LoginUser([FromBody] string userName, [FromBody] string password)
+        public IActionResult LoginUser([FromBody] string userName, string password)
         {
             System.Console.WriteLine(password);
             return Ok(userName);
