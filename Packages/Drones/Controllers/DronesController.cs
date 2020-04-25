@@ -26,7 +26,7 @@ namespace Dronai.Packages.Drones.Controllers
             newDrone.BatterySize = drone.BatterySize;
             newDrone.AmountOfDeliveries = 0;
             newDrone.DateOfRegistry = new DateTime();
-            return Ok(drone);
+            return Ok(newDrone);
         }
     }
 }
