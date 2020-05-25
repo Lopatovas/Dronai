@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Dronai.Packages.Drones.Mocks;
 using Dronai.Packages.Drones.Models;
+using Dronai.Packages.Drones.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace Dronai.Packages.Drones.Controllers
 {
@@ -12,20 +14,31 @@ namespace Dronai.Packages.Drones.Controllers
     [Route("[controller]")]
     public class DronesController : ControllerBase
     {
+        private DronesDbContext _context;
+        private DronesService _service;
+
+        public DronesController(IHttpContextAccessor httpContextAccessor)
+        {
+            _context = httpContextAccessor.HttpContext.RequestServices.GetService(typeof(DronesDbContext)) as DronesDbContext;
+            _service = new DronesService(_context.GetConnection());
+        }
+
         [HttpGet]
         public IActionResult GetDrones()
         {
-            return Ok(DroneMocks.GetDrones(20));
+            var drones = _service.GetAllDrones();
+            return Ok(drones);
         }
 
         [HttpPost]
         public IActionResult AddDrone(Drone drone)
         {
-            Drone newDrone = DroneMocks.GetDrone();
-            newDrone.ManufacturerCode = drone.ManufacturerCode;
-            newDrone.BatterySize = drone.BatterySize;
-            newDrone.AmountOfDeliveries = 0;
-            newDrone.DateOfRegistry = new DateTime();
+            drone.AmountOfDeliveries = 0;
+            drone.DateOfRegistry = DateTime.Now.Date;
+            drone.Latitude = 0f;
+            drone.Longitute = 0f;
+            drone.Status = DroneStatus.Free.Value;
+            var newDrone = _service.AddDrone(drone);
             return Ok(newDrone);
         }
     }

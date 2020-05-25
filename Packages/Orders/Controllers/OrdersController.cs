@@ -1,5 +1,7 @@
 ﻿using Dronai.Packages.Orders.Mocks;
 using Dronai.Packages.Orders.Models;
+using Dronai.Packages.Orders.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dronai.Packages.Orders.Controllers
@@ -8,6 +10,16 @@ namespace Dronai.Packages.Orders.Controllers
     [Route("[controller]")]
     public class OrdersController : ControllerBase
     {
+
+        private DronesDbContext _context;
+        private OrdersService _service;
+
+        public OrdersController(IHttpContextAccessor httpContextAccessor)
+        {
+            _context = httpContextAccessor.HttpContext.RequestServices.GetService(typeof(DronesDbContext)) as DronesDbContext;
+            _service = new OrdersService(_context.GetConnection());
+        }
+
         /// <summary>
         /// Darbuotojo
         /// </summary>
@@ -16,7 +28,8 @@ namespace Dronai.Packages.Orders.Controllers
         [Route("/UserOrders")]
         public IActionResult GetUserOrders()
         {
-            return Ok(OrderMocks.GetOrders(10));
+            var orders = _service.GetAllOrders();
+            return Ok(orders);
         }
 
 

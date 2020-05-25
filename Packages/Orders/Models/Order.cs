@@ -12,5 +12,6 @@ namespace Dronai.Packages.Orders.Models
         public string Status { get; set; }
 
         public string AddressFrom { get; set; }
+
     }
 }
