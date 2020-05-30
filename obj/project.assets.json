@@ -1793,11 +1793,12 @@
       ]
     },
     "Microsoft.CSharp/4.0.1": {
-      "sha512": "D/yf70Qmv/T0EVoF9eM3tcew+0hNUdjADvUVPGs5j1dDgZab43ahpa2uSc1LvTL901/zQWgDJnreh1EdynIh+w==",
+      "sha512": "17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
       "type": "package",
       "path": "microsoft.csharp/4.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2852,11 +2853,12 @@
       ]
     },
     "System.Dynamic.Runtime/4.0.11": {
-      "sha512": "kzU2DN18GrbFlWh/fxyH34NAWQ38XeyEKmkAuhNFzW/Gh5tYaVkAfucl00fwL9jic45w6stnjAsCDX3jhdOOGA==",
+      "sha512": "db34f6LHYM0U0JpE+sOmjar27BnqTVkbLJhgfwMpTdgTigG/Hna3m2MYVwnFzGGKnEJk2UXFuoVTr8WUbU91/A==",
       "type": "package",
       "path": "system.dynamic.runtime/4.0.11",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5500,11 +5502,12 @@
       ]
     },
     "System.Threading.Thread/4.0.0": {
-      "sha512": "NGnPtl4mQK5dit0AXKz2t5bBEQN135agowW2GJ82c4wLQwregBHo8HHFBGJymMTAfhAkfjmhih2n469yBGp3oQ==",
+      "sha512": "gIdJqDXlOr5W9zeqFErLw3dsOsiShSCYtF9SEHitACycmvNvY8odf9kiKvp6V7aibc8C4HzzNBkWXjyfn7plbQ==",
       "type": "package",
       "path": "system.threading.thread/4.0.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5539,11 +5542,12 @@
       ]
     },
     "System.Threading.ThreadPool/4.0.10": {
-      "sha512": "orXe/Jfs7YFHpFXq8YK0U4REBr2ben0qWfjBT3jXoBRWV8YBJIWm6ZxQFdFCEfNQfLL9Qx3TBUSLjkK/vdfbsw==",
+      "sha512": "IMXgB5Vf/5Qw1kpoVgJMOvUO1l32aC+qC3OaIZjWJOjvcxuxNWOK2ZTWWYXfij22NHxT2j1yWX5vlAeQWld9vA==",
       "type": "package",
       "path": "system.threading.threadpool/4.0.10",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5795,11 +5799,12 @@
       ]
     },
     "System.Xml.XmlDocument/4.0.1": {
-      "sha512": "VQceNhuBDLN2ihWmFKCf2XZ2eKf4clws3wcOpRNBgcCCCZaRyMTtU1R7XBLi7l3RnM6e8LOgvQtwQpcQ4gjTcA==",
+      "sha512": "2eZu6IP+etFVBBFUFzw2w6J21DqIN5eL9Y8r8JfJWUmV28Z5P0SNU01oCisVHQgHsDhHPnmq2s1hJrJCFZWloQ==",
       "type": "package",
       "path": "system.xml.xmldocument/4.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5833,11 +5838,12 @@
       ]
     },
     "System.Xml.XPath/4.0.1": {
-      "sha512": "DGN2lmngOGI9ghv8h7KJ6LU2GnMbFpUsxybZyG+p7L80csYl+VyGY1GwYiHFCH5Rb4PA3zUrcrdmCLsD+gO/+Q==",
+      "sha512": "UWd1H+1IJ9Wlq5nognZ/XJdyj8qPE4XufBUkAW59ijsCPjZkZe0MUzKKJFBr+ZWBe5Wq1u1d5f2CYgE93uH7DA==",
       "type": "package",
       "path": "system.xml.xpath/4.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -5914,23 +5920,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\edglop\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Kostas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edglop\\source\\repos\\Dronai\\Dronai.csproj",
+      "projectUniqueName": "C:\\Users\\Kostas\\Documents\\GitHub\\Dronai\\Dronai.csproj",
       "projectName": "Dronai",
-      "projectPath": "C:\\Users\\edglop\\source\\repos\\Dronai\\Dronai.csproj",
-      "packagesPath": "C:\\Users\\edglop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edglop\\source\\repos\\Dronai\\obj\\",
+      "projectPath": "C:\\Users\\Kostas\\Documents\\GitHub\\Dronai\\Dronai.csproj",
+      "packagesPath": "C:\\Users\\Kostas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kostas\\Documents\\GitHub\\Dronai\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\edglop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kostas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

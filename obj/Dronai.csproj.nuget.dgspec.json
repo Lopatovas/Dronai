@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\edglop\\source\\repos\\Dronai\\Dronai.csproj": {}
+    "C:\\Users\\Kostas\\Documents\\GitHub\\Dronai\\Dronai.csproj": {}
   },
   "projects": {
-    "C:\\Users\\edglop\\source\\repos\\Dronai\\Dronai.csproj": {
+    "C:\\Users\\Kostas\\Documents\\GitHub\\Dronai\\Dronai.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\edglop\\source\\repos\\Dronai\\Dronai.csproj",
+        "projectUniqueName": "C:\\Users\\Kostas\\Documents\\GitHub\\Dronai\\Dronai.csproj",
         "projectName": "Dronai",
-        "projectPath": "C:\\Users\\edglop\\source\\repos\\Dronai\\Dronai.csproj",
-        "packagesPath": "C:\\Users\\edglop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\edglop\\source\\repos\\Dronai\\obj\\",
+        "projectPath": "C:\\Users\\Kostas\\Documents\\GitHub\\Dronai\\Dronai.csproj",
+        "packagesPath": "C:\\Users\\Kostas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kostas\\Documents\\GitHub\\Dronai\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\edglop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kostas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
