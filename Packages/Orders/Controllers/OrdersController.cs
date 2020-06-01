@@ -3,6 +3,8 @@ using Dronai.Packages.Orders.Models;
 using Dronai.Packages.Orders.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 
 namespace Dronai.Packages.Orders.Controllers
 {
@@ -48,7 +50,7 @@ namespace Dronai.Packages.Orders.Controllers
         }
 
         [HttpGet]
-        [Route("/Orders/{id}")]
+        [Route("/Orders")]
         public IActionResult GetOrders()
         {
             return Ok(_service.GetAllOrders());
@@ -64,42 +66,59 @@ namespace Dronai.Packages.Orders.Controllers
         }
 
         [HttpPost]
-        [Route("/Orders/Payment")]
+        [Route("/Orders/Payment/{id}")]
         public IActionResult PayForOrder(int id)
+            
         {
+            Console.WriteLine(id);
             Order order = _service.GetOrder(id);
             order.Id = id;
             order.Status = OrderStatus.Paid.Value;
-            if (_service.UpdateOrder(order) != null)
+            if (_service.UpdateOrder(order, id) != null)
             {
                 return Ok(order);
             }
             else
             {
-                System.Diagnostics.Debug.WriteLine("Faild to update");
+                System.Diagnostics.Debug.WriteLine("Failed to update");
                 return Ok(order);
             }
         }
 
         [HttpPost]
-        [Route("/UserOrders/Confirm")]
+        [Route("/UserOrders/Confirm/{id}")]
         public IActionResult ConfirmOrder(int id)
         {
             Order order = _service.GetOrder(id);
             order.Id = id;
             order.Status = OrderStatus.Confirmed.Value;
-            return Ok(order);
+            if (_service.UpdateOrder(order, id) != null)
+            {
+                return Ok(order);
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Failed to update");
+                return Ok(order);
+            }
         }
 
         [HttpPost]
-        [Route("/UserOrders/Deny")]
+        [Route("/UserOrders/Deny/{id}")]
         public IActionResult DenyOrder(int id)
         {
             Order order = _service.GetOrder(id);
             order.Id = id;
             order.Status = OrderStatus.Denied.Value;
-            _service.UpdateOrder(order);
-            return Ok(order);
+            if (_service.UpdateOrder(order, id) != null)
+            {
+                return Ok(order);
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Failed to update");
+                return Ok(order);
+            }
         }
     }
 }

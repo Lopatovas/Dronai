@@ -39,7 +39,7 @@ namespace Dronai.Packages.Orders.Mocks
                 AddressFrom = "Laisves Pr. 469, Kedainiai",
                 AddressTo = "Agurku Pl. 15, Kedainiai",
                 Status = RandomizeStatus(),
-                DateOfDelivery = new DateTime()
+                DateOfDelivery = "2020-10-12"
             };
         }
 

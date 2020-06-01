@@ -33,7 +33,7 @@ namespace Dronai.Packages.Users.Controllers
             var response = _service.AuthenticateUser(payload);
             if (response != null)
             {
-                return Ok(response.Email);
+                return Ok(response);
             }
             return NotFound();
         }

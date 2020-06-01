@@ -33,24 +33,24 @@ namespace Dronai.Packages.Users.Services
         {
             _connection.Open();
             var insertQuerry = $"select * from users where email=\"{user.Email}\" and password=\"{user.Password}\" and status=\"Aktyvus\";";
-            User authenticatedUser = null;
+            Employee authenticatedEmployee = null;
             MySqlCommand cmd = new MySqlCommand(insertQuerry, _connection);
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    authenticatedUser = new User()
+
+                    authenticatedEmployee = new Employee()
                     {
+                        Id = Convert.ToInt32(reader["id"]),
+                        PersonalId = Convert.ToString(reader["personalId"]),
                         Email = Convert.ToString(reader["email"]),
                     };
-                    if(reader["personalId"] != null)
-                    {
-                        Console.WriteLine("Employer boi");
-                    }
+
                 }
             }
             _connection.Close();
-            return authenticatedUser;
+            return authenticatedEmployee;
         }
     }
 }

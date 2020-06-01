@@ -32,7 +32,7 @@ namespace Dronai.Packages.Orders.Services
                     {
                         Id = Convert.ToInt32(reader["Id"]),
                         AddressTo = Convert.ToString(reader["addressTo"]),
-                        DateOfDelivery = Convert.ToDateTime(reader["dateOfDelivery"]),
+                        DateOfDelivery = Convert.ToString(reader["dateOfDelivery"]),
                         Status = Convert.ToString(reader["status"]),
                         AddressFrom = Convert.ToString(reader["addressFrom"]),
                     });
@@ -45,22 +45,22 @@ namespace Dronai.Packages.Orders.Services
         public List<Order> GetUserOrders(int userid)
         {
             _connection.Open();
-            var selectQuery = $"select * from userorders where user=\"{userid}\";";
+            var selectQuery = $"select * from orders where userId=\"{userid}\";";
             List<Order> orders = new List<Order>();
             MySqlCommand cmd = new MySqlCommand(selectQuery, _connection);
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    UserOrder userOrder = new UserOrder()
+                    Order order = new Order()
                     {
-                        User = Convert.ToInt32(reader["user"]),
-                        Order = Convert.ToInt32(reader["order"]),
+                        Id = Convert.ToInt32(reader["id"]),
+                        AddressFrom = Convert.ToString(reader["addressFrom"]),
+                        AddressTo = Convert.ToString(reader["addressTo"]),
+                        DateOfDelivery = Convert.ToString(reader["dateOfDelivery"]),
+                        Status = Convert.ToString(reader["status"])
                     };
-
-                    Order order = GetOrder(userOrder.Order);
                     orders.Add(order);
-
                 }
             }
             _connection.Close();
@@ -80,9 +80,10 @@ namespace Dronai.Packages.Orders.Services
                     order = new Order()
                     {
                         Id = Convert.ToInt32(reader["id"]),
-                        AddressFrom = Convert.ToString(reader["adress"]),
-                        AddressTo = Convert.ToString(reader["delivery_adress"]),
-                        DateOfDelivery = Convert.ToDateTime(reader["delivery_date"])
+                        AddressFrom = Convert.ToString(reader["addressFrom"]),
+                        AddressTo = Convert.ToString(reader["addressTo"]),
+                        DateOfDelivery = Convert.ToString(reader["dateOfDelivery"]),
+                        userId = Convert.ToInt32(reader["userId"])
                     };
                 }
             }
@@ -90,10 +91,10 @@ namespace Dronai.Packages.Orders.Services
             return order;
         }
 
-        internal Order UpdateOrder(Order order)
+        internal Order UpdateOrder(Order order, int id)
         {
             _connection.Open();
-            var insertQuerry = $"UPDATE orders SET delivery_date=\"{order.DateOfDelivery}\", adress=\"{order.AddressFrom}\", delivery_adress=\"{order.AddressTo}\", state=\"{order.Status}\";";
+            var insertQuerry = $"UPDATE orders SET dateOfDelivery=\"{order.DateOfDelivery}\", addressFrom=\"{order.AddressFrom}\", addressTo=\"{order.AddressTo}\", status=\"{order.Status}\", userId=\"{order.userId}\" WHERE id =\"{id}\";";
             MySqlCommand cmd = new MySqlCommand(insertQuerry, _connection);
             var updated = cmd.ExecuteNonQuery();
             _connection.Close();
@@ -107,7 +108,7 @@ namespace Dronai.Packages.Orders.Services
         public Order AddOrder(Order order)
         {
             _connection.Open();
-            var insertQuerry = $"INSERT INTO orders (delivery_date, adress, delivery_adress, state) VALUES(\"{order.DateOfDelivery}\", \"{order.AddressTo}\", \"{order.AddressFrom}\", \"{order.Status}\"); ";
+            var insertQuerry = $"INSERT INTO orders (dateOfDelivery, addressTo, addressFrom, status, userId) VALUES(\"{order.DateOfDelivery}\", \"{order.AddressTo}\", \"{order.AddressFrom}\", \"{order.Status}\", \"{order.userId}\"); ";
             MySqlCommand cmd = new MySqlCommand(insertQuerry, _connection);
             var updated = cmd.ExecuteNonQuery();
             _connection.Close();

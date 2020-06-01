@@ -20,7 +20,7 @@ namespace Dronai.Packages.Drones.Services
         {
             List<Drone> list = new List<Drone>();
             _connection.Open();
-            MySqlCommand cmd = new MySqlCommand("select * from Drones", _connection);
+            MySqlCommand cmd = new MySqlCommand("select * from drones", _connection);
 
             using (var reader = cmd.ExecuteReader())
             {
@@ -46,7 +46,7 @@ namespace Dronai.Packages.Drones.Services
         public Drone AddDrone(Drone drone)
         {
             _connection.Open();
-            var insertQuerry = $"INSERT INTO Drones (manufacturerCode, dateOfRegistry, amountOfDeliveries, batterySize, status, latitude, longitute) VALUES(\"{drone.ManufacturerCode}\", \"{drone.DateOfRegistry}\", {drone.AmountOfDeliveries}, {drone.BatterySize}, \"{drone.Status}\", {drone.Latitude}, {drone.Longitute}); ";
+            var insertQuerry = $"INSERT INTO drones (manufacturerCode, dateOfRegistry, amountOfDeliveries, batterySize, status, latitude, longitute) VALUES(\"{drone.ManufacturerCode}\", \"{drone.DateOfRegistry}\", {drone.AmountOfDeliveries}, {drone.BatterySize}, \"{drone.Status}\", {drone.Latitude}, {drone.Longitute}); ";
             MySqlCommand cmd = new MySqlCommand(insertQuerry, _connection);
             var updated = cmd.ExecuteNonQuery();
             _connection.Close();

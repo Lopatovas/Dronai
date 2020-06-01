@@ -34,7 +34,7 @@ namespace Dronai.Packages.Drones.Controllers
         public IActionResult AddDrone(Drone drone)
         {
             drone.AmountOfDeliveries = 0;
-            drone.DateOfRegistry = DateTime.Now.Date;
+            drone.DateOfRegistry = DateTime.Today;
             drone.Latitude = 0f;
             drone.Longitute = 0f;
             drone.Status = DroneStatus.Free.Value;
